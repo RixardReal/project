@@ -3,24 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My cool web</title>
-    <link rel="icon" href="https://buss.log/icon.ico"> <!-- This image will be the page's icon -->
-
-    <meta name="theme-color" content="#000000">
-    <meta name="description" content="My cool web">
-
-    <link rel="stylesheet" href="styles.css"> <!-- This CSS file will be the page's styles -->
-
-    <!-- Link to the Lua script properly -->
-    <script src="script.lua"></script> <!-- This script tag will be the page's script -->
+    <title>Lua Web Example</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/gh/fengari-lua/fengari-web@v0.1.1/dist/fengari-web.js"></script>
 </head>
-
 <body>
-  <h1>Hey there!</h1>
-  <!-- Use the img tag to display images -->
-  <img src="https://buss.log/rick-astley.png" alt="Rick Astley">
+    <h1>Lua Web Example</h1>
+    <button id="button">Click me!</button>
+    <input id="input" type="text" placeholder="Type something here">
+    
+    <script type="text/lua">
+        local function print(msg)
+            -- Redirecting Lua print to JavaScript console.log
+            js.global:console():log(msg)
+        end
 
-  <!-- Assuming script2.lua is necessary, otherwise remove -->
-  <script src="script2.lua"></script>
+        -- Accessing DOM elements
+        local button = js.global:document():getElementById("button")
+        local input = js.global:document():getElementById("input")
+
+        -- Adding event listeners
+        button:addEventListener("click", function()
+            print("The button got clicked!!!")
+        end)
+
+        input:addEventListener("input", function(event)
+            print(event.target.value)
+        end)
+    </script>
 </body>
 </html>

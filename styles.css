@@ -1,12 +1,11 @@
 div {
-    border-color: #616161;
-    border-width: 1px;
-    border-style: solid;
+    border: 1px solid #616161;
     border-radius: 12px;
     padding: 10px;
-    direction: row;
+    display: flex;  /* Added Flexbox for layout */
+    flex-direction: row;
     align-items: center;
-    gap: 10;
+    gap: 10px;
 }
 
 h1 {
@@ -17,13 +16,9 @@ h1 {
 p {
     font-size: 16px;
     line-height: 1.5;
-    font-family: Iosevka;
+    font-family: Iosevka;  /* Ensure the font is available */
     font-weight: bold;
-
-    border-style: solid;
-    border-width: 5px;
-    border-color: red;
-
+    border: 5px solid red;  /* Combined border properties */
     border-radius: 12px;
 }
 
@@ -34,14 +29,8 @@ h4 {
 a {
     color: #007bff;
     font-size: 16px;
-    text-decoration: none;
-    font-weight: ultralight;
-    underline: double;
-    underline-color: #ff0000;
-    overline: single;
-    overline-color: #ff0000;
-    strikethrough: true;
-    strikethrough-color: #ff0000;
+    text-decoration: underline double red;  /* Valid underline */
+    font-weight: 200;  /* Light font weight */
     margin-right: 50px;
 }
 
@@ -49,21 +38,19 @@ ul, ol {
     margin-left: 20px;
 }
 
-ok {
+/* Use a class or ID for custom tags */
+.ok {
     color: #FF3232;
 }
 
 select {
     padding: 5px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #ccc;
+    border: 1px solid #ccc;  /* Combined border properties */
     border-radius: 3px;
     margin-left: 40px;
 }
 
 hr {
-    border-color: #ccc;
-    border-width: 1px;
-    border-style: solid;
+    border: none;  /* Reset default styling */
+    border-top: 1px solid #ccc;  /* Set a custom border */
 }
